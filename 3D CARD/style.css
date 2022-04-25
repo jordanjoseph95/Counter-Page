@@ -1,0 +1,105 @@
+@import url("https://fonts.googleapis.com/css2?family=Fira+Sans:wght@200&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Fira Sans", sans-serif;
+}
+.container {
+  width: 100%;
+  height: 100vh;
+  background-color: rgb(236, 157, 173);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
+  width: 380px;
+  cursor: pointer;
+  perspective: 1000px;
+  /* border: 2px solid green; */
+}
+
+/* Whenever we would rotate the
+   card, it will be hidden */
+.front-face {
+  backface-visibility: hidden;
+}
+.front-face img {
+  width: 100%;
+  border: 10px;
+}
+/* Let's add some CSS for the text, description (written on the back-side) */
+
+.back-face {
+  backface-visibility: hidden;
+  background-color: black;
+  color: white;
+  height: 100%;
+  width: 100%;
+  border-radius: 15px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  transform: rotateY(180deg);
+}
+.card:hover .card-inner {
+  transform: rotateY(180deg);
+}
+
+.card-inner {
+  position: relative;
+  width: 100%;
+  text-align: center;
+  transform-style: preserve-3d;
+  transition: transform 3s;
+}
+
+.back-face h2 {
+  font-size: 50px;
+  font-weight: 600;
+  margin-top: 10px;
+}
+
+.back-face p {
+  font-size: 25px;
+  font-weight: 300;
+}
+
+.social-media i {
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  font-size: 18px;
+  background-color: grey;
+  color: white;
+  margin: 25px 6px;
+  border-radius: 50%;
+}
+
+.social-media a {
+  /* To remove the underlines form the <a> tage */
+  text-decoration: none;
+}
+
+.btn {
+  background-color: grey;
+  padding: 12px 30px;
+  cursor: pointer;
+  font-size: 20px;
+  margin: 80px auto 0;
+  border-radius: 25px;
+  text-decoration: none;
+  color: black;
+}
+.btn:hover {
+  background-color: rgb(73, 73, 73);
+}
+
+.social-media i:hover {
+  background-color: rgb(73, 73, 73);
+}
